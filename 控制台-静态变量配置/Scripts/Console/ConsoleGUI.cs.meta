@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: bf148d4d1085cf545b528f932c2aa6a1
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - guiPrefab: {fileID: 6844457101318024347, guid: 689d374d5104f2c418b879ba530785a8,
+      type: 3}
+  - panel: {instanceID: 0}
+  - input_field: {instanceID: 0}
+  - text_area: {instanceID: 0}
+  - text_area_background: {instanceID: 0}
+  - buildIdText: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
