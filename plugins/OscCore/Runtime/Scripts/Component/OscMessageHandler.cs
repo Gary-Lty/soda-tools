@@ -4,7 +4,6 @@ using UnityEngine.Serialization;
 
 namespace OscCore
 {
-    [ExecuteInEditMode]
     public abstract class MessageHandlerBase : MonoBehaviour
     {
         [Tooltip("The receiver to handle messages from")]
@@ -58,7 +57,6 @@ namespace OscCore
         protected virtual void Update() { }
     }
     
-    [ExecuteInEditMode]
     public abstract class OscMessageHandler<T, TUnityEvent> : MessageHandlerBase
         where TUnityEvent : UnityEvent<T>
     {
