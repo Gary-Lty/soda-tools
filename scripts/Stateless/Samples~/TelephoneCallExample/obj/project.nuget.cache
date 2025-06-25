@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "stmvr7HzpxA=",
+  "success": false,
+  "projectFilePath": "D:\\zoomgame\\stateless\\Stateless\\Samples~\\TelephoneCallExample\\TelephoneCallExample.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Unable to find project 'D:\\zoomgame\\stateless\\Stateless\\src\\Stateless\\Stateless.csproj'. Check that the project reference is valid and that the project file exists.",
+      "libraryId": "D:\\zoomgame\\stateless\\Stateless\\src\\Stateless\\Stateless.csproj",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
+}

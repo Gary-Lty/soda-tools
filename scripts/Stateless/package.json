@@ -1,0 +1,13 @@
+{
+  "name": "com.dotnet.stateless",
+  "displayName": "Stateless",
+  "version": "1.0.0",
+  "unity": "2021.3",
+  "description": "Create state machines and lightweight state machine-based workflows directly in .NET code.",
+  "keywords": [
+    "statemechine",
+    "keyword2"
+  ],
+  "category": "Tools"
+}
+    
