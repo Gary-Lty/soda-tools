@@ -110,7 +110,7 @@ public class OpenSceneWindow : EditorWindow
 
     private void LoadOtherScenes()
     {
-        string path = Application.dataPath + "/otherScenes.txt";
+        string path = Application.dataPath +  "/Editor/otherScenes.txt";
         if (File.Exists(path))
         {
             otherScene = new List<string>(File.ReadAllLines(path));
@@ -119,7 +119,7 @@ public class OpenSceneWindow : EditorWindow
 
     public void SaveOtherScenes()
     {
-        string path = Application.dataPath + "/otherScenes.txt";
+        string path = Application.dataPath + "/Editor/otherScenes.txt";
         File.WriteAllLines(path, otherScene.ToArray());
     }
 
@@ -147,7 +147,7 @@ public class OtherSceneEditorWindow : EditorWindow
         Event evt = Event.current;
         Rect dropArea = GUILayoutUtility.GetRect(0.0f, 50.0f, GUILayout.ExpandWidth(true));
 
-        GUI.Box(dropArea, "Drag & Drop Scenes Here");
+        GUI.Box(dropArea, "Drag & Drop Scenes Here To Add Scene");
 
         switch (evt.type)
         {
