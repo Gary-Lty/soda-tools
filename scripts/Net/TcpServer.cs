@@ -22,6 +22,11 @@ public static partial class TaskExtensions
         return await task;
     }
 }
+
+public class Client2ServerEvt
+{
+    public string Message;
+}
 public class TcpServer : MonoBehaviour
 {
     private TcpListener tcpListener;
@@ -147,9 +152,9 @@ public class TcpServer : MonoBehaviour
                 // 将接收到的字节数组转换为字符串
                 string message = Encoding.UTF8.GetString(buffer, 0, bytesRead);
                 Log($"服务器转发消息: {message}");
-
+                MainThreadDispatcher.Post((v)=> MessageBroker.Default.Publish(new Client2ServerEvt{Message =  message}),null );
                 // 广播消息给所有客户端
-                BroadcastMessage(message, client);
+                // BroadcastMessage(message, client);
             }
             catch (OperationCanceledException)
             {
@@ -241,7 +246,7 @@ public class TcpServer : MonoBehaviour
     [ContextMenu("StopServer")]
     public void StopServer()
     {
-        Debug.Log("停止服务器");
+        Debug.Log("[TCP]停止服务器");
         // 停止服务器
         isRunning = false;
 
@@ -252,7 +257,7 @@ public class TcpServer : MonoBehaviour
         {
             tcpListener.Stop();
         }
-        Debug.Log("服务器已停止1");
+        Debug.Log("[TCP]服务器已停止1");
 
         // 关闭所有客户端连接
         lock (clients)
@@ -264,22 +269,22 @@ public class TcpServer : MonoBehaviour
 
             clients.Clear();
         }
-        Debug.Log("服务器已停止2");
+        Debug.Log("[TCP]服务器已停止2");
 
         // 确保取消令牌源被释放
         cancellationTokenSource?.Dispose();
         cancellationTokenSource = null;
-        Debug.Log("服务器已停止3");
+        Debug.Log("[TCP]服务器已停止3");
     }
 
     void LogError(string message)
     {
-        MainThreadDispatcher.Post((obj) => Debug.LogError(message), null);
+        MainThreadDispatcher.Post((obj) => Debug.LogError("[TCP]"+message), null);
     }
 
     void Log(string message)
     {
-        MainThreadDispatcher.Post((obj) => Debug.Log(message), null);
+        MainThreadDispatcher.Post((obj) => Debug.Log("[TCP]"+message), null);
     }
 }
 

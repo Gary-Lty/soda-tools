@@ -286,12 +286,12 @@ public class TcpGame : MonoBehaviour
 
     void LogError(string message)
     {
-        MainThreadDispatcher.Post((obj) => Debug.LogError(message), null);
+        MainThreadDispatcher.Post((obj) => Debug.LogError("[TCP]"+message), null);
     }
 
     void Log(string message)
     {
-        MainThreadDispatcher.Post((obj) => Debug.Log(message), null);
+        MainThreadDispatcher.Post((obj) => Debug.Log("[TCP]"+message), null);
     }
 
     void OnApplicationQuit()
@@ -302,10 +302,10 @@ public class TcpGame : MonoBehaviour
     [ContextMenu("StopConnect")]
     private void StopConnect()
     {
-        Debug.Log("断开连接");
+        Debug.Log("[TCP]断开连接");
         isConnected = false;
         CloseConnection();
-        Debug.Log("客户端已断开连接");
+        Debug.Log("[TCP]客户端已断开连接");
     }
 }
 
